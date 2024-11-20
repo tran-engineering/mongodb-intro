@@ -20,4 +20,5 @@ const reloader = () => ({
 
 export default defineConfig({
   plugins: [mdPlugin(), reloader()],
+  base: ''
 });
