@@ -7,6 +7,9 @@ import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
 import json from "highlight.js/lib/languages/json";
 import * as d3 from "d3";
+import mermaid from 'mermaid';
+mermaid.initialize({ startOnLoad: false });
+
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("json", json);
@@ -115,14 +118,17 @@ export default class Presentation extends EventEmitter {
     return slide
       .selectAll("div > *")
       .style("opacity", 0)
-      .style("transform", "rotate(-30deg)")
+      .style("transform", "rotate(-5deg)")
       .interrupt()
       .transition()
       .duration(600)
       .ease(d3.easeBackOut)
       .delay((d, i) => 300 + i * 100)
       .style("transform", undefined)
-      .style("opacity", undefined);
+      .style("opacity", undefined)
+      .call(() => {
+        mermaid.run();
+      });
   }
 
   static fadeOutSlide(slide: d3.Selection<HTMLDivElement, Slide, any, any>) {
