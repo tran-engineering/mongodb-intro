@@ -51,19 +51,27 @@ erDiagram
   - capaplanner-timetable-no-support-plan (ZIELBILD)
   - capaplanner-order-no-support-plan (ZIELBILD)
 
+---
+
+## Examples 2
+
 - Clusters (Created by us):
   - capatimetable-dev-2
   - capatimetable-test-unsharded
 
 - Database (Created by us):
-  - capacity-object-dev-v26
-  - capacity-object-test-v26
+  - capacity-object-dev-v28
+  - capacity-object-test-v28
 
 - Collection (Created by Spring Data `@Document`):
   - pathOccupancy
   - pathDemand
 
-- Indexes (Created by Spring Data `@CompoundIndex` / `@Indexed`):
+- Indexes (Created by Spring Data `@CompoundIndex` / `@Indexed`)
+
+Example:
+
+https://code.sbb.ch/projects/TP_TMS_CAPAPLANNER/repos/capaorder-capacity-order/browse/src/main/java/ch/sbb/tms/capaplanner/order/capacityorder/capacity/planningorder/CapacityPlanningOrderStatusSummary.java#22
 
 ---
 
@@ -75,12 +83,15 @@ erDiagram
 |Database|Database|
 |Collection|Table|
 |Document|Row|
+|Index|Index|
 
 ---
 
 ## DEMO Part 1
 
 ![Atlas](atlas-demo.png)
+
+[MongoDB Atlas](https://cloud.mongodb.com/v2/6576c3566c0a037fa40a945d#/overview)
 
 ---
 
@@ -90,15 +101,27 @@ erDiagram
 
 ## What is a query in MongoDB?
 
-- A MongoDB query is also JSON (roughly)
+A MongoDB query roughly JSON.
 
-### Simplest possible query
+### MongoDB Extended JSON v2
+
+Most types are inferred, but if you need more control, i.e. DateTime formats
+
+https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/
+
+### mongosh
+
+https://www.mongodb.com/docs/mongodb-shell/reference/data-types/
+
+---
+
+## Simplest possible query
 
 Is a empty JSON document:
 
 `{}`
 
-Finds everything
+Is the equivalent to `SELECT * FROM <collection>`
 
 ---
 
@@ -131,7 +154,6 @@ Comparison:
 
 `$eq`, `$ne`, `$gt`, `$lt`, `$gte`, `$lte`, `$in`, `$nin`
 
-
 Evaluation:
 
 `$regex`
@@ -146,7 +168,8 @@ Element:
 
 Array:
 
-`$all`, `$elemMatch`
+- `$all` : All elements in array must match
+- `$elemMatch`: At least one element must match
 
 ---
 
@@ -232,7 +255,7 @@ Here is the main workflow:
 
 - 100 MB per pipeline stage
 - max 100. pipeline stage
-- Indexes can be used in `$match`, `$group`, `$sort`, `$lookup` stages
+- Indexes can be used in `$match`, `$group`, `$sort`, `$lookup`
 
 ---
 
@@ -379,6 +402,9 @@ Each query can only use up to 1 index.
 - Multikey Index (array field index)
 - Text Index (full text search index)
 - Hashed index (hash function index)
+- Geospatial Indexes (mainly used for GeoJSON)
+
+https://www.mongodb.com/docs/manual/core/indexes/index-types
 
 ---
 
