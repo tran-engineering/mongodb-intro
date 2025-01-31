@@ -215,7 +215,7 @@ Nested fields can be queried using the "dot" notation:
 
 ## Exercises
 
-1. Movies from the year 1977
+1. Movies released in the year 1977
 2. Movies between 1977 and 1982. *Hint: use multiple operators*
 3. Movies that contain 'Star Wars' in the title. *Hint: use $regex or shorthand regex*
 4. Movies that have at least 9.0 imdb rating. *Hint: $gte*
