@@ -63,7 +63,7 @@ erDiagram
 
 ## Examples
 
-- Organisation  (Created by HIVE Team):
+- Organisation (Created by HIVE Team):
   - SBB Basic Support 1
   - SBB Pro Support 1
 
@@ -84,10 +84,6 @@ erDiagram
   - pathDemand
 
 - Indexes (Created by Spring Data `@CompoundIndex` / `@Indexed`)
-
-Example:
-
-https://code.sbb.ch/projects/TP_TMS_CAPAPLANNER/repos/capaorder-capacity-order/browse/src/main/java/ch/sbb/tms/capaplanner/order/capacityorder/capacity/planningorder/CapacityPlanningOrderStatusSummary.java#22
 
 ---
 
@@ -462,9 +458,9 @@ db.movies.createIndex(
 A single MongoDB query is divided into stages:
 
 1. Query Stage
-2. Plan Stage
-3. Fetch Stage
-4. Projection Stage
+2. Plan Stage *(optimize query)*
+3. Fetch Stage *(fetch from storage)*
+4. Projection Stage *(discard unwanted fields)*
 5. Sort Stage
 6. Limit Stage
 7. Return Stage
