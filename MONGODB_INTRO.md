@@ -14,8 +14,9 @@
 - Aggregations
 - Explains
 
+---
 
-### Java Specific
+### Java / Spring Specific
 
 - Transactions
 - SpringData MongoDB
@@ -24,11 +25,31 @@
 
 ---
 
+## Team Hive SSP Portal
+
+https://backstage.sbb-cloud.net/
+
+![ssp](ssp.png)
+
+---
+
+## DB Policy!
+
+![policy](backup-policy.png)
+
+---
+
+## Support plan
+
+![supportplan](supportplan.png)
+
+---
+
 ## Terminology around MongoDB
 
 MongoDB Atlas Specific terminology
 
-<pre class="mermaid">
+<figure class="mermaid" style="transform: scale(0.7)">
 erDiagram
     "Organisation (Atlas only)" ||--o{ "Project (Atlas only)" : ""
     "Project (Atlas only)" ||--o{ "Cluster (Atlas only)" : ""
@@ -36,20 +57,15 @@ erDiagram
     Database || --o{ Collection : ""
     Collection || --o{ Document : ""
     Collection || --o{ Index : ""
-</pre>
+</figure>
 
 ---
 
 ## Examples
 
 - Organisation  (Created by HIVE Team):
-  - DSO - TRS - Non-PROD
-  - DSO - TRS - PROD (Pro Support)
-
-- Project (Created by HIVE Team):
-  - capacityplanner-timetable-no-support-plan (RUNDLAUF)
-  - capaplanner-timetable-no-support-plan (ZIELBILD)
-  - capaplanner-order-no-support-plan (ZIELBILD)
+  - SBB Basic Support 1
+  - SBB Pro Support 1
 
 ---
 
