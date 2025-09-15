@@ -2,6 +2,19 @@
 
 ---
 
+## Links
+
+### Presentation
+
+https://tran-engineering.github.io/mongodb-intro/
+
+### Code
+
+https://github.com/tran-engineering/mongodb-intro
+
+
+---
+
 ## Agenda
 
 ### MongoDB
@@ -103,7 +116,7 @@ erDiagram
 
 ![Atlas](atlas-demo.png)
 
-[MongoDB Atlas](https://cloud.mongodb.com/v2/6576c3566c0a037fa40a945d#/overview)
+[MongoDB Atlas](https://cloud.mongodb.com/v2/68c3bef228d9a2795a496c5d#/metrics/replicaSet/68c3c260295e7b08a08cebc7/explorer/mongodb-intro/movies/find)
 
 ---
 
